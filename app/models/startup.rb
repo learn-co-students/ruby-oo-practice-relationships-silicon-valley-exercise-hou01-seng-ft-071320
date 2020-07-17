@@ -27,7 +27,7 @@ class Startup
         index = all_com.find_index {|value|
             value.founder==founder_name
         }
-        puts all_com[index]
+        all_com[index]
     end
 
     def self.domains
