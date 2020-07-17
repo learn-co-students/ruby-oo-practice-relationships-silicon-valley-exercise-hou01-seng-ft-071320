@@ -36,17 +36,22 @@ class Startup
         @@domain.uniq
     end
 
-    def sign_contract(venture,type,amount)
-        @venture = venture
-        fund1=FundingRound.new(type,amount)
+    def sign_contract(type,amount)
+        FundingRound.new(type,amount)
     end
-
+  
     def num_funding_rounds
         FundingRound.all.length
     end
 
     def total_funds
-       total=FundingRound.investments.sum
+       FundingRound.investments.sum
+    end
+    def investors
+        VentureCapitalist.names
+    end
+    def big_investors
+        VentureCapitalist.tres_commas_club
     end
 
 end

@@ -2,7 +2,7 @@ require_relative './startup'
 require_relative './venture_capitalist'
 class FundingRound
     attr_accessor :type,:investment
-     attr_reader :startup,:venture_capitalist
+    attr_reader :startup,:venture_capitalist
  
      @@all=[]
      @@investments=[]
