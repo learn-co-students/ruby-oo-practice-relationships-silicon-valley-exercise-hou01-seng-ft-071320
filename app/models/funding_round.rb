@@ -5,12 +5,13 @@ class FundingRound
      attr_reader :startup,:venture_capitalist
  
      @@all=[]
- 
+     @@investments=[]
      def initialize(type,investment)
          @type=type
          @investment=investment
          @investment>0
          @@all << self
+         @@investments<<investment
      end
  
      def startup
@@ -28,5 +29,8 @@ class FundingRound
  
      def self.all
          @@all
+     end
+     def self.investments
+        @@investments
      end
  end

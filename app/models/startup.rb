@@ -1,3 +1,5 @@
+require_relative './venture_capitalist'
+require_relative './funding_round'
 class Startup
     
     attr_accessor :name,:domain
@@ -32,6 +34,19 @@ class Startup
 
     def self.domains
         @@domain.uniq
+    end
+
+    def sign_contract(venture,type,amount)
+        @venture = venture
+        fund1=FundingRound.new(type,amount)
+    end
+
+    def num_funding_rounds
+        FundingRound.all.length
+    end
+
+    def total_funds
+       total=FundingRound.investments.sum
     end
 
 end
