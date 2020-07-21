@@ -1,5 +1,4 @@
-require_relative './startup'
-require_relative './funding_round'
+
 class VentureCapitalist
     attr_accessor :name,:total_worth
 
@@ -28,12 +27,14 @@ class VentureCapitalist
        club
     end
 
-    def offer_contract(type,amount)
-        FundingRound.new(type,amount)
+    def offer_contract(startup,type,amount)
+        FundingRound.new(type,amount,startup,self)
     end
 
     def funding_rounds
-       
+        arr=FundingRound.all.map{|value|
+        value.venture_capitalist==self}
+        arr.size
     end
     def investors
         VentureCapitalist.names

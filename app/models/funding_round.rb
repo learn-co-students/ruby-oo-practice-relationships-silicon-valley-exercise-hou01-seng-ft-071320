@@ -1,12 +1,10 @@
-require_relative './startup'
-require_relative './venture_capitalist'
 class FundingRound
     attr_accessor :type,:investment
     attr_reader :startup,:venture_capitalist
  
      @@all=[]
      @@investments=[]
-     def initialize(type,investment)
+     def initialize(type,investment,startup,venture_capitalist)
          @type=type
          @investment=investment
          @investment>0
